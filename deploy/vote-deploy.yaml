@@ -6,7 +6,7 @@ metadata:
     role: vote
 spec:
   minReadySeconds: 20
-  replicas: 2
+  replicas: 4
   revisionHistoryLimit: 5
   strategy:
     type: RollingUpdate
@@ -25,11 +25,11 @@ spec:
       labels:
         app: python
         role: vote
-        version: v2
+        version: v4
     spec:
       containers:
         - name: app
-          image: schoolofdevops/vote:v2
+          image: schoolofdevops/vote:v4
           resources:
             requests:
               memory: "64Mi"
